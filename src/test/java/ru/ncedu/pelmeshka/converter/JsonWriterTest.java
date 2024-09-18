@@ -7,11 +7,10 @@ import static org.junit.jupiter.api.Assertions.*;
 class JsonWriterTest {
     @Test
     void jsonTest() {
-        String path = "/Users/pelmeshka127/Desktop/Java/BundleProject/src/main/resources/csv/1.csv";
-        CsvFile csvFile = new CsvFile(path);
-        csvFile.printFile();
+        String path = "src/main/resources/csv/1.csv";
 
-        JsonWriter jsonWriter = new JsonWriter(csvFile);
-        System.out.println(jsonWriter.getJsonFile());
+        JsonWriter jsonWriter = new JsonWriter(path);
+        System.out.println(jsonWriter.getJsonFileName());
+        jsonWriter.jsonConverter();
     }
 }

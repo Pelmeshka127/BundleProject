@@ -1,18 +1,33 @@
 package ru.ncedu.pelmeshka.converter;
 
-import java.util.ArrayList;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.PrintWriter;
 
 public class JsonWriter {
-    private String jsonFile;
-    private ArrayList<String> strings;
+    private String  jsonFileName;
 
-    public JsonWriter(CsvFile csvFile) {
-        String srcFile = csvFile.getFileName();
-        this.jsonFile = srcFile.substring(0, srcFile.length() - 3) + "json";
+    public JsonWriter(String path) {
+        this.jsonFileName = path.replaceAll("csv", "json");
     }
 
-    public String getJsonFile() {
-        return jsonFile;
+    public void jsonConverter() {
+        File file = new File(jsonFileName);
+        try {
+            file.createNewFile();
+//            makeJson(file);
+        } catch (FileNotFoundException e) {
+            System.err.println("Failed to find file " + jsonFileName + " after creating");
+        }
+        catch (IOException e) {
+            System.err.println("Failed create new file " + jsonFileName);
+            e.printStackTrace();
+        }
+    }
+
+    public String getJsonFileName() {
+        return jsonFileName ;
     }
 
 }

@@ -9,7 +9,7 @@ import java.util.Scanner;
 class OpenFileTest {
     @Test
     void openFile() throws FileNotFoundException {
-        String path     = "/Users/pelmeshka127/Desktop/Java/BundleProject/src/main/resources/csv/1.csv";
+        String path     = "src/main/resources/csv/1.csv";
         File file       = new File(path);
         Scanner scan    = new Scanner(file);
 
