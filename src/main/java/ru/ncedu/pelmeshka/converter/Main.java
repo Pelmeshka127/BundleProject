@@ -9,5 +9,8 @@ public class Main {
         } else {
             System.out.println(args[0]);
         }
+
+        JsonWriter jsonWriter = new JsonWriter(args[0]);
+        jsonWriter.Converter();
     }
 }

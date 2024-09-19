@@ -52,7 +52,7 @@ public class JsonWriter {
         printer.println("{");
         for (int i = 0; i < strings.size(); i++) {
             if (strings.get(i).charAt(0) == '#') {
-                printer.println("\t// " + strings.get(i));
+                printer.println("\t// " + strings.get(i).substring(1, strings.get(i).length()));
             } else {
                 String[] arr = strings.get(i).split(",");
                 printer.print("\t\"" + printString(arr[0]) + "\": ");
