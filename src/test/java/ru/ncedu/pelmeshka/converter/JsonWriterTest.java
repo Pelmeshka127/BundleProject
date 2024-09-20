@@ -11,10 +11,5 @@ class JsonWriterTest {
 
         JsonWriter jsonWriter = new JsonWriter(path);
         jsonWriter.Converter();
-
-//        char nonAscii = 0x00FF;
-//        String asciiText = "Hello";
-//        System.out.println(asciiText.matches("\\A\\p{ASCII}*\\z"));
-//        System.out.println(nonAsciiText.matches("\\A\\p{ASCII}*\\z"));
     }
 }

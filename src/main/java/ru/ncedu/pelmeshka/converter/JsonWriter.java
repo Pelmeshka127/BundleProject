@@ -7,6 +7,14 @@ import java.io.PrintWriter;
 import java.util.Scanner;
 import java.util.ArrayList;
 
+/**
+ * Class for implementation of csv to json converting.
+ * Includes:
+ * jsonFile - path of destination json file;
+ * srcFile - path of source csv file;
+ * strings - strings of source file, which will be executed for making json file;
+ */
+
 public class JsonWriter {
     private static int INITIAL_CAPACITY = 20;
 
@@ -39,6 +47,10 @@ public class JsonWriter {
         }
     }
 
+    /**
+     * Main method of class which starts the process of converting;
+     * Uses private method "printJson" which implements all logic
+     */
     public void Converter() {
         try (PrintWriter printer = new PrintWriter(jsonFile)) {
             printJson(printer);
@@ -48,6 +60,10 @@ public class JsonWriter {
         }
     }
 
+    /**
+     * Method prints converted strings to json file depending on their structure
+     * @param printer is object of PrintWriter class that prints strings to destination file
+     */
     private void printJson(PrintWriter printer) {
         printer.println("{");
         for (int i = 0; i < strings.size(); i++) {
@@ -66,6 +82,11 @@ public class JsonWriter {
         printer.println("}");
     }
 
+    /**
+     * Method implements converting string to unicode or ASCII
+     * @param str source string to print in json file
+     * @return converted string
+     */
     private String printString(String str) {
         if (isASCII(str)) {
             return str;
